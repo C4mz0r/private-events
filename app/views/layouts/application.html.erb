@@ -7,7 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<header>
+	Logged in as <%= current_user.inspect %>
+	<%= link_to "Log out", logout_path, method: :delete %>
+</header>
 <%= yield %>
 
 </body>
