@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
   
+  get 'events/new'
+
+  get 'events/create'
+
+  get 'events/index'
+
+  get 'events/show'
+
   get 'sessions/new'
 
   resources :users, only: [:new, :create, :show]
@@ -9,6 +17,8 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
 
   root 'sessions#new'
+  
+  resources :events, only: [:index, :new, :create, :show]
   
   #get 'users/new'
 
