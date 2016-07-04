@@ -8,4 +8,13 @@ Date:  <%= @event.date %><%= tag(:br) %>
 Location: <%= @event.location %><%= tag(:br) %>
 Description: <%= @event.description %><%= tag(:br) %>
 
-Created by: <%= @creator.name %>
+Created by: <%= @creator.name %><%= tag(:br) %>
+
+Who's Coming?<%= tag(:br) %>
+<ul>
+<% @attendees.each do |attendee| %>
+  <li>
+  	<%= attendee.name %>
+  </li>
+<% end %>
+</ul>
