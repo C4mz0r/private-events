@@ -8,8 +8,10 @@
 </head>
 <body>
 <header>
+  <% unless current_user.nil? %>
 	Logged in as <%= current_user.inspect %>
-	<%= link_to "Log out", logout_path, method: :delete %>
+    <%= link_to "Log out", logout_path, method: :delete %>
+  <% end %>
 </header>
 <%= yield %>
 
