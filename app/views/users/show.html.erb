@@ -12,3 +12,23 @@ Welcome to the home page for user <%= @user.id %>, <%= @user.name %> (<%= @user.
 <% @user.events.each do |event| %>
   <%= event.name + " - " + event.location + " - " + event.date.to_s %><br>
 <% end %>
+
+<p>
+	Events that I am going to:
+</p>
+<% @user.attended_events.each do |going|%>
+  <%= going.name %><br>
+<% end %>
+
+
+<div>
+	<span>Upcoming events:</span>
+	<div>
+		<%= @user.upcoming_events.inspect %>
+	</div>
+	
+	<span>Previously attended events:</span>
+	<div>
+		<%= @user.previous_events.inspect %>
+	</div>
+</div>

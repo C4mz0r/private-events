@@ -13,13 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20160704194358) do
 
-  create_table "commitments", force: :cascade do |t|
-    t.integer  "attendee_id"
-    t.integer  "event_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
   create_table "event_attendings", force: :cascade do |t|
     t.integer  "attendee_id"
     t.integer  "event_id"

@@ -1,6 +1,15 @@
 <h1>Events#index</h1>
 <p>Find me in app/views/events/index.html.erb</p>
 
+<p>Upcoming Events:</p>
+<%= @upcomingEvents.inspect %>
+
+
+<p>Past Events:</p>
+<%= @pastEvents.inspect %>
+
+
+<!--
 <% @events.each do |event| %>
   Event Name:  <%= event.name %><%= tag(:br) %>
   Date:  <%= event.date %><%= tag(:br) %>
@@ -8,3 +17,4 @@
   Description: <%= event.description %><%= tag(:br) %>  
   <%= tag(:hr)%>
 <% end %>
+-->
