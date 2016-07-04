@@ -4,3 +4,11 @@
 <p>
 Welcome to the home page for user <%= @user.id %>, <%= @user.name %> (<%= @user.email %>).
 </p>
+
+<p>
+	Events created:
+</p>
+	
+<% @user.events.each do |event| %>
+  <%= event.name + " - " + event.location + " - " + event.date.to_s %><br>
+<% end %>
