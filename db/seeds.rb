@@ -13,6 +13,13 @@ User.create(name:'Fourth', email:'fourth@example.com')
 User.create(name:'Fifth', email:'fifth@example.com')
 
 # not fully correct, using ID, but just want to seed...
-Event.create(name: "First's party", location: "Edmonton", date:DateTime.now, user_id: 1)
-Event.create(name: "Seconds's party", location: "Toronto", date:DateTime.now, user_id: 2)
-Event.create(name: "Third's party", location: "Vancouver", date:DateTime.now, user_id: 3)
+User.first.events.create(name: "First's party", location: "Edmonton", date:DateTime.now, description: "Happy birthday to meeeeee!")
+User.second.events.create(name: "Seconds's party", location: "Toronto", date:DateTime.now, description: "I'm having a surprise party for my friend.")
+User.third.events.create(name: "Third's party", location: "Vancouver", date:DateTime.now, description: "Our coworker, Sue, is going on mat leave, so we will be having a dinner for her.  Gifts are not necessary but if you want to pitch in a few bucks, Sam is going to be buying a card and also a gift card for the baby store.")
+
+EventAttending.create(attendee_id: 1, event_id: 2)
+EventAttending.create(attendee_id: 1, event_id: 3)
+EventAttending.create(attendee_id: 2, event_id: 1)
+EventAttending.create(attendee_id: 2, event_id: 3)
+EventAttending.create(attendee_id: 3, event_id: 1)
+EventAttending.create(attendee_id: 3, event_id: 2)
