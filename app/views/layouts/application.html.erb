@@ -18,6 +18,11 @@
     <span>
     	<%= link_to "View All Events", events_index_path, method: :get %>
     </span>
+    
+    <span>
+    	<% randomFriend = selectRandomUser %>
+    	<%= link_to "Where is #{randomFriend.name} Going?", user_path(randomFriend), method: :get %>
+    </span>
 	
 	<span class="logout">
     <%= link_to "Log out", logout_path, method: :delete %>
