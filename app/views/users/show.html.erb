@@ -5,30 +5,26 @@
 Welcome to the home page for user <%= @user.id %>, <%= @user.name %> (<%= @user.email %>).
 </p>
 
-<p>
-	Events created:
-</p>
+
+<div id="accordion">
+  <h3>My Created Events (<%= @user.events.count %>)</h3>
+  <div>
+	<% @user.events.each do |event| %>
+      <%= render partial: 'events/event', :locals => {:event => event} %>
+    <% end %>
+  </div>
+
+  <h3>Upcoming events (<%= @user.upcoming_events.count %>)</h3>
+  <div>
+	<% @user.upcoming_events.each do |event| %>
+	  <%= render partial: 'events/event', :locals => {:event => event} %>
+	<% end %>
+  </div>
 	
-<% @user.events.each do |event| %>
-  <%= event.name + " - " + event.location + " - " + event.date.to_s %><br>
-<% end %>
-
-<p>
-	Events that I am going to:
-</p>
-<% @user.attended_events.each do |going|%>
-  <%= going.name %><br>
-<% end %>
-
-
-<div>
-	<span>Upcoming events:</span>
-	<div>
-		<%= @user.upcoming_events.inspect %>
-	</div>
-	
-	<span>Previously attended events:</span>
-	<div>
-		<%= @user.previous_events.inspect %>
-	</div>
+  <h3>Previously attended events (<%= @user.previous_events.count %>)</h3>
+  <div>
+	<% @user.previous_events.each do |event| %>
+	  <%= render partial: 'events/event', :locals => {:event => event} %>
+	<% end %>
+  </div>  
 </div>

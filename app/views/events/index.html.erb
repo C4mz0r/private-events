@@ -1,20 +1,19 @@
 <h1>Events#index</h1>
 <p>Find me in app/views/events/index.html.erb</p>
 
-<p>Upcoming Events:</p>
-<%= @upcomingEvents.inspect %>
+<div id="accordion">
+	
+  <h3>Upcoming Events (<%= @upcomingEvents.count %>)</h3>
+  <div>
+    <% @upcomingEvents.each do |e| %>
+      <%= render partial: 'event', :locals => {:event => e} %>
+    <% end %>
+  </div>
 
-
-<p>Past Events:</p>
-<%= @pastEvents.inspect %>
-
-
-<!--
-<% @events.each do |event| %>
-  Event Name:  <%= event.name %><%= tag(:br) %>
-  Date:  <%= event.date %><%= tag(:br) %>
-  Location: <%= event.location %><%= tag(:br) %>
-  Description: <%= event.description %><%= tag(:br) %>  
-  <%= tag(:hr)%>
-<% end %>
--->
+  <h3>Past Events (<%= @pastEvents.count %>)</h3>
+  <div>
+    <% @pastEvents.each do |e| %>
+      <%= render partial: 'event', :locals => {:event => e} %>
+    <% end %>
+  </div>
+</div>

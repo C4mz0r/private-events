@@ -4,11 +4,11 @@ class User < ActiveRecord::Base
   has_many :attended_events, :through => :event_attendings, :source => :event
       
   def upcoming_events    
-    self.events.happens_later    
+    self.attended_events.happens_later    
   end
   
   def previous_events    
-    self.events.happened_before
+    self.attended_events.happened_before
   end  
 end
 

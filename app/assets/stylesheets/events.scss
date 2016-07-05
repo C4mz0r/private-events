@@ -1,3 +1,36 @@
 // Place all the styles related to the Events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.event {
+  background-color: #ccc;
+  border: 5px solid black;
+  box-shadow: 5px 5px 5px #888888;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+
+
+
+.event-date {
+  width: 25%;
+  float: left;
+}
+
+.event-location {
+  width: 25%;
+  float: left;
+}
+
+.event-name {
+  width: 50%;
+  float: left;
+}
+
+.event-description {
+  background-color: #a0d8f1;
+  border: 2px solid black; 
+  clear:both; 
+}

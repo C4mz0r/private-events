@@ -1,8 +1,19 @@
 <h1>Events#show</h1>
 <p>Find me in app/views/events/show.html.erb</p>
 
-<p>Event details</p>
+<h2>Event Details</h2>
 
+<%= render partial: 'event', :locals => {:event => @event} %>
+<!--
+<div class="event">
+  <div>
+    <div class="event-date"><%= @event.date.strftime("%b %e, %Y %T") %></div>
+    <div class="event-name"><%= @event.name %></div>
+    <div class="event-location"><%= @event.location %></div>
+  </div>
+  <div class="event event-description"><%= @event.description %></div>
+</div>
+-->
 Event Name:  <%= @event.name %><%= tag(:br) %>
 Date:  <%= @event.date %><%= tag(:br) %>
 Location: <%= @event.location %><%= tag(:br) %>
