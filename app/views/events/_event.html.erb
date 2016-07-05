@@ -3,6 +3,7 @@
     <div class="event-date"><%= event.date.strftime("%b %e, %Y %T") %></div>
     <div class="event-name"><%= event.name %> (Hosted by <%= event.creator.name %>)</div>
     <div class="event-location"><%= event.location %></div>
+    <div class="btn btn-primary going"><%= link_to ((current_user.event_attendings.pluck(:event_id).include?event.id.to_i)? "Registered" : "Go?") , register_path(event.id), :method => :post %></div>
   </div>
   <div class="event event-description"><%= event.description %></div>
 </div>

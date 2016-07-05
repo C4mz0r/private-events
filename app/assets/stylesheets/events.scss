@@ -15,12 +15,12 @@
 
 
 .event-date {
-  width: 25%;
+  width: 20%;
   float: left;
 }
 
 .event-location {
-  width: 25%;
+  width: 20%;
   float: left;
 }
 
@@ -33,4 +33,9 @@
   background-color: #a0d8f1;
   border: 2px solid black; 
   clear:both; 
+}
+
+.going {
+  float:right;
+  margin-bottom:5px;
 }
